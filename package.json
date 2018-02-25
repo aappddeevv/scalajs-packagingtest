@@ -1,0 +1,18 @@
+{
+  "name": "scalajs-packagingtest",
+  "version": "0.1.0",
+  "description": "Test packaging",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "immutable-js": "^0.3.1-6",
+    "monet": "^0.8.10",
+    "office-ui-fabric-react": "^5.55.1",
+    "ramda": "^0.25.0",
+    "sprintf-js": "^1.1.1"
+  }
+}
