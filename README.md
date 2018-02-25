@@ -11,23 +11,23 @@ A main def is defined in each test so that there is an entry point defined altho
 ## Results
 
 | Test   | Comment |fullOptJS (0.6.X)| fullOptJS (1.0.0-M3)|
-|------- |-----------|-----|---|
-| test0 | no main (despite comment above) | 9,255 | |
-| test1  | no code except main | 9,485 |  |
-| test2  | a single native trait | 9,486 | |
-| test3  | non-native traits, with new | 9,486 | |
-| test4  | println of some strings with s/f | 44,423 | |
-| test5  | Immutable HashMap only | 42,988 | |
-| test6 | Immutable HashMap and printf | 65,365 | |
-| test7 | Immutable HashMap, Seq | 88,837 | |
-| test8 | Immutable HashMap, Seq, HashSet | 97,165 | |
-| test9 | Create js array, literals, js.Dicts | 9,493 | |
-| test10 | 2 case class, no main (1 case class is the same size!) | 9,256 | |
+|------- |-----------|-----:|----:|
+| test0 | no main (despite comment above) | 9,255 | 8,838 |
+| test1  | no code except main | 9,485 | 9,025 |
+| test2  | a single native trait | 9,486 | 9,025|
+| test3  | non-native traits, with new | 9,486 | 9,025|
+| test4  | println of some strings with s/f | 44,423 | 38,641 |
+| test5  | Immutable HashMap only | 42,988 | 81,205|
+| test6 | Immutable HashMap and printf | 65,365 | 58,689 |
+| test7 | Immutable HashMap, Seq | 88,837 | 81,205 |
+| test8 | Immutable HashMap, Seq, HashSet | 97,165 | 89,303|
+| test9 | Create js array, literals, js.Dicts | 9,493 | 9,031 |
+| test10 | 2 case class, no main (1 case class is the same size!) | 9,256 | 8,839 |
 
 Notes:
 * println adds a lot of kb.
 * Each immutable structure seems to add around 10-20K.
-* Zipped sizes are small. test0 => 3,625, test8 => 23,459.
+* Zipped sizes are small. test0 => 3,625 (3,480), test8 => 23,459 (21,950).
 
 It's pretty clear, and validates our expectations, that the scala.js overhead is really due to the parts that can get pulled in rather than scala.js itself. If you use existing scala.js libraries, then you most likely pull in alot of the overhead parts of the standard scala library.
 
