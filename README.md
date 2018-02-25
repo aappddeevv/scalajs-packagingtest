@@ -17,7 +17,7 @@ A main def is defined in each test so that there is an entry point defined altho
 | test2  | a single native trait | 9,486 | 9,025|
 | test3  | non-native traits, with new | 9,486 | 9,025|
 | test4  | println of some strings with s/f | 44,423 | 38,641 |
-| test5  | Immutable HashMap only | 42,988 | 81,205|
+| test5  | Immutable HashMap only | 42,988 | 40,539 |
 | test6 | Immutable HashMap and printf | 65,365 | 58,689 |
 | test7 | Immutable HashMap, Seq | 88,837 | 81,205 |
 | test8 | Immutable HashMap, Seq, HashSet | 97,165 | 89,303|
