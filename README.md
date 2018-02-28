@@ -23,7 +23,7 @@ A main def is defined in each test so that there is an entry point defined altho
 | test8 | Immutable HashMap, Seq, HashSet | 97,165 | 89,303|
 | test9 | Create js array, literals, js.Dicts | 9,493 | 9,031 |
 | test10 | 2 case class, no main (1 case class is the same size!) | 9,256 ?? | 8,839 |
-| test11 | js Promise+scala future (just Promise) | 66,033 (9,514) | _ |
+| test11 | js Promise+scala future (just Promise) | 66,033 (9,514) | 66,034 (9,514) |
 
 Notes:
 * println adds a lot of kb.
