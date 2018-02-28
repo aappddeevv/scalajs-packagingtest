@@ -48,4 +48,4 @@ Some of these have dependencies that are not reflected directly in their byte co
 
 If you add most of a UI component library, the scala.js overhead is a small % of the total bundle size. Most effort should be put into reducing the bundling of un-needed UI components.
 
-Altogether, non-UI, minimized code size is around ~110K for equivalent parts in scala so *if* you include those parts, its about the same overall. non-scala.js code allows you to more cleverly carve up your kb budget. Also, if you have a mixed project, it's additive.
+Altogether, non-UI, minimized code size is around ~140K for equivalent parts in scala so *if* you include those parts, its about the same overall. non-scala.js code allows you to more cleverly carve up your kb budget. Also, if you have a mixed project, it's additive.
