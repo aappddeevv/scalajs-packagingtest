@@ -44,7 +44,7 @@ lazy val root = project.in(file("."))
     test1, test2, test3,
     test4, test5, test6,
     test7, test8, test9,
-    test10)
+    test10, test11)
   .enablePlugins(ScalaJSPlugin)
 
 lazy val test0 = project
@@ -129,3 +129,9 @@ lazy val test10 = project
   .settings(libsettings)
   .enablePlugins(ScalaJSPlugin)
   .settings()
+
+lazy val test11 = project
+  .settings(libsettings)
+  .enablePlugins(ScalaJSPlugin)
+  .settings(scalaJSUseMainModuleInitializer := true,
+    mainClass in Compile := Some("test11"))

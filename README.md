@@ -22,7 +22,8 @@ A main def is defined in each test so that there is an entry point defined altho
 | test7 | Immutable HashMap, Seq | 88,837 | 81,205 |
 | test8 | Immutable HashMap, Seq, HashSet | 97,165 | 89,303|
 | test9 | Create js array, literals, js.Dicts | 9,493 | 9,031 |
-| test10 | 2 case class, no main (1 case class is the same size!) | 9,256 | 8,839 |
+| test10 | 2 case class, no main (1 case class is the same size!) | 9,256 ?? | 8,839 |
+| test11 | js Promise+scala future (just Promise) | 66,033 (9,514) | _ |
 
 Notes:
 * println adds a lot of kb.
@@ -30,6 +31,8 @@ Notes:
 * Zipped sizes are small. test0 => 3,625 (3,480), test8 => 23,459 (21,950).
 
 It's pretty clear, and validates our expectations, that the scala.js overhead is really due to the parts that can get pulled in rather than scala.js itself. If you use existing scala.js libraries, then you most likely pull in alot of the overhead parts of the standard scala library.
+
+Using futures, println, immutable data structures appears to add around 170kb to the fullOptJS module size.
 
 ## Sizes of JS Related Libraries
 

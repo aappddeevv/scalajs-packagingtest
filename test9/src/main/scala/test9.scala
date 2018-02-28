@@ -6,6 +6,6 @@ object test9 {
   val x = js.Dynamic.literal("x" -> 10)
   val y = js.Dictionary.empty[String]
 
-  def main(args: Array[String]): Unit = {
+  def main(): Unit = {
   }
 }
