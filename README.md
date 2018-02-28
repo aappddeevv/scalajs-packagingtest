@@ -6,7 +6,7 @@ To run a test, it is also necessary to sometimes perform a small trivial computa
 
 Only fullOptJS compiles count. fastOptJS is not used in production and is significantly larger of course.
 
-A main def is defined in each test so that there is an entry point defined although this is not essential.
+A main def is defined in each test so that there is an entry point defined although this is not essential. Measurements are in bytes unless otherwise noted.
 
 ## Results
 
@@ -30,13 +30,18 @@ Notes:
 * Each immutable structure seems to add around 10-20K.
 * Zipped sizes are small. test0 => 3,625 (3,480), test8 => 23,459 (21,950).
 
-It's pretty clear, and validates our expectations, that the scala.js overhead is really due to the parts that can get pulled in rather than scala.js itself. If you use existing scala.js libraries, then you most likely pull in alot of the overhead parts of the standard scala library.
+It's pretty clear, and validates our expectations, that the scala.js overhead is
+really due to the parts that can get pulled in rather than scala.js itself. If
+you use existing scala.js libraries, then you most likely pull in alot of the
+overhead parts of the standard scala library.
 
-Using futures, println, immutable data structures appears to add around 170kb to the fullOptJS module size.
+Using futures, println, immutable data structures appears to add around ~150kb
+(eyeball) to the fullOptJS module size.
 
 ## Sizes of JS Related Libraries
 
-Some of these have dependencies that are not reflected directly in their byte count but some do! Some sizes were checked via npm installing and some via cdn.
+Some of these have dependencies that are not reflected directly in their byte
+count but some do! Some sizes were checked via npm installing and some via cdn.
 
 | JS Library | Comment | size (min or non-min) |
 |-------------|---------|--------|
@@ -46,6 +51,11 @@ Some of these have dependencies that are not reflected directly in their byte co
 | sprintf   | printf-like | 13,565 |
 | office-fabric-ui-react | UI component | 801,429 |
 
-If you add most of a UI component library, the scala.js overhead is a small % of the total bundle size. Most effort should be put into reducing the bundling of un-needed UI components.
+If you add most of a UI component library, the scala.js overhead is a small % of
+the total bundle size. Most effort should be put into reducing the bundling of
+un-needed UI components.
 
-Altogether, non-UI, minimized code size is around ~140K for equivalent parts in scala so *if* you include those parts, its about the same overall. non-scala.js code allows you to more cleverly carve up your kb budget. Also, if you have a mixed project, it's additive.
+Altogether, non-UI, minimized code size is around ~140kb (eyeball) for
+equivalent parts in scala so *if* you include those parts, its about the same
+overall. non-scala.js code allows you to more cleverly carve up your kb
+budget. Also, if you have a mixed project, it's additive.
